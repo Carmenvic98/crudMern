@@ -33,4 +33,11 @@ router.post('/addmovie',(req,res)=>{
         date: req.body.date,
         country: req.body.country,
     })
+    newMovie.save(function(err){
+        if(!err){
+            res.send('user added successfully')
+        }else{
+            res.send(err)
+        }
+    })
 })
